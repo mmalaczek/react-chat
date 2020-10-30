@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Message from "./components/Message";
+import MessageForm from "./components/MessageForm";
 
 export default function App() {
     const messages = [
@@ -14,6 +15,7 @@ export default function App() {
             {messages.map(message => (
                 <Message key={message.id} message={message} />
             ))}
+            <MessageForm />
         </div>
     );
 }
