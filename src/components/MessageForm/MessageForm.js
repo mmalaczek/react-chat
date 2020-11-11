@@ -1,12 +1,17 @@
 import React from "react";
 
-function MessageForm({ handleSubmit, handleContentChange }) {
+function MessageForm({message, handleSubmit, handleContentChange}) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="user" />
-                <input type="text" name="content" onChange={handleContentChange}/>
-                <input type="submit" value="Submit" />
+                <input type="text" name="user"/>
+                <input
+                    type="text"
+                    name="content"
+                    value={message}
+                    onChange={(event) => handleContentChange(event.target.value)}
+                />
+                <input type="submit" value="Submit"/>
             </form>
         </div>
     );

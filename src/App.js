@@ -9,6 +9,7 @@ export default function App() {
         const value = event.target.value;
         console.log(value);
         event.preventDefault();
+        setMessage("");
     };
     const messages = [
         { id: 12, user: 'Patryk', content: 'Hej', datetime: Date.now() },
@@ -18,10 +19,11 @@ export default function App() {
 
     return (
         <div className="App">
-            {messages.map(message => (
+            {messages.map((message) => (
                 <Message key={message.id} message={message} />
             ))}
             <MessageForm
+                message={message}
                 handleSubmit={handleSubmit}
                 handleContentChange={setMessage}
             />
